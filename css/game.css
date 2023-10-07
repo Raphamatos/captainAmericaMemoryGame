@@ -1,0 +1,70 @@
+
+
+/* versão do curso
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto;
+}
+    .card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    background-color: #021d52;
+    border-radius: 0.5em;
+    position: relative;
+    transition: all 1s ease;
+    transform-style:preserve-3d;
+
+} */
+.topo{
+    max-width: 1200px;
+    width: 90vw;
+    border: 1px solid #094c8b;
+    background-color:#094c8b ;
+    height: 10vh;
+    margin: 10px auto 0;
+}
+.grid {
+    width: 90vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card {
+    width: 25%;
+    padding: 0.2rem;
+    aspect-ratio: 4/4;
+    transition: all 1s ease;
+    transform-style:preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: contain;
+    border-radius: 0.5em;
+    transition: all 1s ease;
+
+}
+.back{
+    background-image: url(../imagens/escudo-img.png);
+    backface-visibility: hidden;
+}
+
+
+.revelar-card{
+    transform: rotateY(180deg);
+}
+
+.disabled-card{
+    opacity: 10;
+    filter:saturate(0) ;
+}
