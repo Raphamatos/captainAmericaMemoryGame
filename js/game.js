@@ -1,4 +1,7 @@
 const grid = document.querySelector('.grid');//seleciona a tag grid
+const spanPlayer = document.querySelector('.player');//seleciona a tag player
+const tempo = document.querySelector('.tempo');
+
 
 const personagens = [
     'Capitãoamerica1',
@@ -21,10 +24,12 @@ const createElement = (tag, className) => {
 
 let firstCard = ''; //pega o valor da primeira carta selecionada
 let secondCard = '';//pega o valor da segunda carta selecionada
+
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('disabled-card');
     if (disabledCards.length === 20) {
-        alert('Eu posso fazer isso o dia todo!')
+        alert('Eu posso fazer isso o dia todo!');
+        clearInterval(this.loop);//para o tempo
     }
 } // Conta quantas cartas foram desabilitadas, ao chegar em 20, finaliza o jogo
 
@@ -82,5 +87,15 @@ const loadGame = () => {
         grid.appendChild(card);
     });
 }
+const startTimer = () => {
+    this.loop = setInterval(() => { // o this que é um objeto vai dar a condição de recuperar esse setInterval em qualquer lugar do nosso site
+        const tempoAtual = +tempo.innerHTML;
+        tempo.innerHTML = tempoAtual + 1;
+    }, 1000)
+}
 
-loadGame();
+window.onload = () => {
+    spanPlayer.innerHTML = localStorage.getItem('Player'); //nome do Player salvo da tela de login
+    startTimer();//da play na função de contagem do tempo
+    loadGame();
+}

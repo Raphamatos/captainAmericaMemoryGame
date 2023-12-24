@@ -1,7 +1,16 @@
 body {
-    margin: 20px auto;
+    margin:75px auto;
     width: 50%;
     background-color: #094c8b;
+}
+footer{
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 0.3em;
+    text-align: center;
+    margin: 1em 0;
+    padding: 1rem;
+    background-color: #fff;
 }
 .login-form{
     border-radius: 8px;
